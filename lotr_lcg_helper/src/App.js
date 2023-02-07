@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import AddCard from "./components/add-card.component";
+import Card from "./components/card.component";
+import CardsList from "./components/cards-list.component";
 
 class App extends Component {
   render() {
