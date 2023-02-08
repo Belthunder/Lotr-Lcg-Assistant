@@ -120,7 +120,7 @@ export default class CardsList extends Component {
                                 onClick={() => this.setActiveCard(card, index)}
                                 key={index}
                                 >
-                                    {card.name}
+                                    {card.card_name}
                                 </li>
                         ))}
                     </ul>
@@ -140,25 +140,25 @@ export default class CardsList extends Component {
                                 <label>
                                     <strong>Name:</strong>
                                 </label>{" "}
-                                {currentCard.name}
+                                {currentCard.card_name}
                             </div>
                             <div>
                                 <label>
                                     <strong>Sphere:</strong>
                                 </label>{" "}
-                                {currentCard.sphere}
+                                {currentCard.card_sphere}
                             </div>
                             <div>
                                 <label>
                                     <strong>Type:</strong>
                                 </label>{" "}
-                                {currentCard.type}
+                                {currentCard.card_type}
                             </div>
                             <div>
                                 <label>
                                     <strong>Text:</strong>
                                 </label>{" "}
-                                {currentCard.Text}
+                                {currentCard.card_text}
                             </div>
 
                             <Link

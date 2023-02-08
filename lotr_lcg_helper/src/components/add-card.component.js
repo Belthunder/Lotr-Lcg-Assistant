@@ -8,56 +8,58 @@ export default class AddCard extends Component {
         this.onChangeSphere = this.onChangeSphere.bind(this);
         this.onChangeType = this.onChangeType.bind(this);
         this.onChangeText = this.onChangeText.bind(this);
+        this.saveCard = this.saveCard.bind(this);
+        this.newCard = this.newCard.bind(this);
 
         this.state = {
             id: null,
-            name: "",
-            sphere: "",
-            type: "",
-            text: "",
+            card_name: "",
+            card_sphere: "",
+            card_type: "",
+            card_text: "",
             submitted: false
         };
     }
 
     onChangeName(e) {
         this.setState({
-            name: e.target.value
+            card_name: e.target.value
         });
     }
 
     onChangeSphere(e) {
         this.setState({
-            sphere: e.target.value
+            card_sphere: e.target.value
         });
     }
 
     onChangeType(e) {
         this.setState({
-            type: e.target.value
+            card_type: e.target.value
         });
     }
 
     onChangeText(e) {
         this.setState({
-            text: e.target.value
+            card_text: e.target.value
         });
     }
 
     saveCard() {
         var data = {
-            name: this.state.name,
-            sphere: this.state.sphere,
-            type: this.state.type,
-            text: this.state.text
+            card_name: this.state.card_name,
+            card_sphere: this.state.card_sphere,
+            card_type: this.state.card_type,
+            card_text: this.state.card_text
         };
 
         CardDataService.create(data).then(response => {
             this.setState({
                 id: response.data.id,
-                name: response.data.name,
-                sphere: response.data.sphere,
-                type: response.data.type,
-                text: response.data.text,
+                card_name: response.data.card_name,
+                card_sphere: response.data.card_sphere,
+                card_type: response.data.card_type,
+                card_text: response.data.card_text,
                 
                 submitted: true
             });
@@ -70,10 +72,10 @@ export default class AddCard extends Component {
     newCard() {
         this.setState({
             id: null,
-            name: "",
-            sphere: "",
-            type: "",
-            text: "",
+            card_name: "",
+            card_sphere: "",
+            card_type: "",
+            card_text: "",
 
             submitted: false
         });
@@ -94,41 +96,53 @@ export default class AddCard extends Component {
                 ) : (
                     <div>
                         <div className= "form-group">
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="card_name">Name</label>
                             <input
                                 type="text"
                                 className= "form-control"
-                                id="name"
+                                id="card_name"
                                 required
-                                value={this.state.name}
+                                value={this.state.card_name}
                                 onChange={this.onChangeName}
-                                name="name"
+                                name="card_name"
                             />
                         </div>
 
                         <div className= "form-group">
-                            <label htmlFor="sphere">Sphere</label>
+                            <label htmlFor="card_sphere">Sphere</label>
                             <input
                                 type="text"
                                 className= "form-control"
-                                id="sphere"
+                                id="card_sphere"
                                 required
-                                value={this.state.sphere}
+                                value={this.state.card_sphere}
                                 onChange={this.onChangeSphere}
-                                name="sphere"
+                                name="card_sphere"
                             />
                         </div>
 
                         <div className= "form-group">
-                            <label htmlFor="type">Card Type</label>
+                            <label htmlFor="card_type">Card Type</label>
                             <input
                                 type="text"
                                 className= "form-control"
-                                id="text"
+                                id="card_type"
                                 required
-                                value={this.state.text}
+                                value={this.state.card_type}
+                                onChange={this.onChangeType}
+                                name="card_type"
+                            />
+                        </div>
+                        <div className= "form-group">
+                            <label htmlFor="card_text">Card Text</label>
+                            <input
+                                type="text"
+                                className= "form-control"
+                                id="card_text"
+                                required
+                                value={this.state.card_text}
                                 onChange={this.onChangeText}
-                                name="text"
+                                name="card_text"
                             />
                         </div>
 

@@ -16,10 +16,10 @@ class Card extends Component {
         this.state = {
             currentCard: {
                 id: null,
-                name: "",
-                sphere: "",
-                type: "",
-                text: ""
+                card_name: "",
+                card_sphere: "",
+                card_type: "",
+                card_text: ""
             },
             message: ""
         };
@@ -30,25 +30,47 @@ class Card extends Component {
     }
 
     onChangeName(e) {
-        const name = e.target.value;
+        const card_name = e.target.value;
 
         this.setState(function(prevState) {
             return { 
                 currentCard: {
                     ...prevState.currentCard,
-                    name: name
+                    card_name: card_name
                 }
             };
         });
     }
 
     onChangeSphere(e) {
-        const sphere = e.target.value;
+        const card_sphere = e.target.value;
 
         this.setState(prevState => ({
             currentCard: {
                 ...prevState.currentCard,
-                sphere: sphere
+                card_sphere: card_sphere
+            }
+        }));
+    }
+
+    onChangeType(e) {
+        const card_type = e.target.value;
+
+        this.setState(prevState => ({
+            currentCard: {
+                ...prevState.currentCard,
+                card_type: card_type
+            }
+        }));
+    }
+
+    onChangeText(e) {
+        const card_text = e.target.value;
+
+        this.setState(prevState => ({
+            currentCard: {
+                ...prevState.currentCard,
+                card_text: card_text
             }
         }));
     }
