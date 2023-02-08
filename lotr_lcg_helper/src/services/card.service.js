@@ -5,7 +5,7 @@ class CardDataService {
         return http.get("/cards");
     }
 
-    get(did) {
+    get(id) {
         return http.get(`/tutorials/${id}`);
     }
 

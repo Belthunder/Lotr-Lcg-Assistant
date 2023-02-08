@@ -36,14 +36,14 @@ class Card extends Component {
             return { 
                 currentCard: {
                     ...prevState.currentCard,
-                    title: title
+                    name: name
                 }
             };
         });
     }
 
     onChangeSphere(e) {
-        const description = e.target.value;
+        const sphere = e.target.value;
 
         this.setState(prevState => ({
             currentCard: {

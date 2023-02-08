@@ -51,6 +51,13 @@ export default class CardsList extends Component {
         });
     }
 
+    setActiveCard(card, index) {
+        this.setState({
+            currentCard: card,
+            currentIndex: index
+        });
+    }
+
     removeAllCards() {
         CardDataService.deleteAll().then(response => {
             this.setState({
@@ -61,6 +68,23 @@ export default class CardsList extends Component {
             console.log(err);
         });
     }
+
+    searchName() {
+        this.setState({
+            currentCard: null,
+            currentIndex: -1
+        });
+
+        CardDataService.findByName(this.state.searchName).then(response => {
+            this.setState({
+                cards: response.data
+            });
+            console.log(response.data);
+        }).catch(err => {
+            console.log(err);
+        });
+    }
+
 
     render() {
         const { searchName, cards, currentCard, currentIndex } = this.state;
