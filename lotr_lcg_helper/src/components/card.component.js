@@ -125,7 +125,7 @@ class Card extends Component {
                                     type="text"
                                     className="form-control"
                                     id="name"
-                                    value={currentCard.name}
+                                    value={currentCard.card_name}
                                     onChange={this.onChangeName}
                                 />
                             </div>
@@ -135,7 +135,7 @@ class Card extends Component {
                                     type="text"
                                     className="form-control"
                                     id="sphere"
-                                    value={currentCard.sphere}
+                                    value={currentCard.card_sphere}
                                     onChange={this.onChangeSphere}
                                 />
                             </div>
@@ -145,7 +145,7 @@ class Card extends Component {
                                     type="text"
                                     className="form-control"
                                     id="type"
-                                    value={currentCard.type}
+                                    value={currentCard.card_type}
                                     onChange={this.onChangeType}
                                 />
                             </div>
@@ -155,7 +155,7 @@ class Card extends Component {
                                     type="text"
                                     className="form-control"
                                     id="text"
-                                    value={currentCard.text}
+                                    value={currentCard.card_text}
                                     onChange={this.onChangeText}
                                 />
                             </div>
