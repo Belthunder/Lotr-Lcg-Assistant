@@ -60,7 +60,7 @@ export default class DecksList extends Component {
 
     removeAllDecks() {
         DeckDataService.deleteAll().then(response => {
-            this,this.setState({
+            this.setState({
                 decks: response.data
             });
             console.log(response.data);
@@ -152,13 +152,13 @@ export default class DecksList extends Component {
                                 <label>
                                     <strong>Games Played:</strong>
                                 </label>{" "}
-                                {currentDeck.games_played}
+                                {currentDeck.deck_games_played}
                             </div>
                             <div>
                                 <label>
                                     <strong>Games Won:</strong>
                                 </label>{" "}
-                                {currentDeck.games_won}
+                                {currentDeck.deck_games_won}
                             </div>
 
                             <Link

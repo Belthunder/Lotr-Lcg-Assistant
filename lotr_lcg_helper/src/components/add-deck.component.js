@@ -8,6 +8,8 @@ export default class AddDeck extends Component {
         this.onChangeCreator = this.onChangeCreator.bind(this);
         this.onChangeGamesPlayed = this.onChangeGamesPlayed.bind(this);
         this.onChangeGamesWon = this.onChangeGamesWon.bind(this);
+        this.saveDeck = this.saveDeck.bind(this);
+        this.newDeck = this.newDeck.bind(this);
 
         this.state = {
             id: null,
@@ -47,7 +49,7 @@ export default class AddDeck extends Component {
             deck_name: this.state.deck_name,
             deck_creator: this.state.deck_creator,
             deck_games_played: this.state.deck_games_played,
-            deck_games_won: this.state.deck_games_won,
+            deck_games_won: this.state.deck_games_won
         };
 
         DeckDataService.create(data).then(response => {
@@ -67,7 +69,7 @@ export default class AddDeck extends Component {
     }
 
 
-    newCard() {
+    newDeck() {
         this.setState({
             id: null,
             deck_name: "",

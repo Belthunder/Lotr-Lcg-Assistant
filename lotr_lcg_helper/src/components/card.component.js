@@ -155,7 +155,7 @@ class Card extends Component {
                                     type="text"
                                     className="form-control"
                                     id="text"
-                                    value={currentCard.card_text}
+                                    value={currentCard.text}
                                     onChange={this.onChangeText}
                                 />
                             </div>

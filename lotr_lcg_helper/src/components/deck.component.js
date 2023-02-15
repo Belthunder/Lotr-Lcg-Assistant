@@ -18,15 +18,15 @@ class Deck extends Component {
                 id: null,
                 deck_name: "",
                 deck_creator: "",
-                games_played: 0,
-                games_won: 0
+                deck_games_played: 0,
+                deck_games_won: 0
             },
             message: ""
         };
     }
 
     componentDidMount() {
-        this.getCard(this.props.router.params.id);
+        this.getDeck(this.props.router.params.id);
     }
 
     onChangeName(e) {
@@ -59,7 +59,7 @@ class Deck extends Component {
         this.setState(prevState => ({
             currentDeck: {
                 ...prevState.currentDeck,
-                games_played: games_played
+                deck_games_played: games_played
             }
         }));
     }
@@ -70,7 +70,7 @@ class Deck extends Component {
         this.setState(prevState => ({
             currentDeck: {
                 ...prevState.currentDeck,
-                games_won: games_won
+                deck_games_won: games_won
             }
         }));
     }
@@ -145,7 +145,17 @@ class Deck extends Component {
                                     type="number"
                                     className="form-control"
                                     id="games_played"
-                                    value={currentDeck.games_played}
+                                    value={currentDeck.deck_games_played}
+                                    onChange={this.onChangeGamesPlayed}
+                                />
+                            </div>
+                            <div className="form-control">
+                                <label htmlFor="games_won">Games Won</label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    id="games_won"
+                                    value={currentDeck.deck_games_won}
                                     onChange={this.onChangeGamesPlayed}
                                 />
                             </div>
