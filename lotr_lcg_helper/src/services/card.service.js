@@ -6,7 +6,7 @@ class CardDataService {
     }
 
     get(id) {
-        return http.get(`/tutorials/${id}`);
+        return http.get(`/cards/${id}`);
     }
 
     create(data) {
