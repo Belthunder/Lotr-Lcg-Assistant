@@ -7,6 +7,10 @@ import AddCard from "./components/add-card.component";
 import Card from "./components/card.component";
 import CardsList from "./components/cards-list.component";
 
+import AddDeck from "./components/add-deck.component";
+import Deck from "./components/deck.component";
+import DecksList from "./components/decks-list.component";
+
 class App extends Component {
   render() {
     return (
@@ -23,7 +27,17 @@ class App extends Component {
             </li>
             <li className="nav-item">
               <Link to={"/add"} className="nav-link">
-                Add
+                Add Card
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/decks"} className="nav-link">
+                Decks
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/addDeck"} className="nav-link">
+                Add Deck
               </Link>
             </li>
           </div>
@@ -31,10 +45,15 @@ class App extends Component {
 
         <div className="container mt-3">
           <Routes>
+
             <Route path="/" element={<CardsList/>}/>
             <Route path="/cards" element={<CardsList/>}/>
             <Route path="/add" element={<AddCard/>}/>
             <Route path="/cards/:id" element={<Card/>}/>
+            
+            <Route path="/decks" element={<DecksList/>}/>
+            <Route path="/addDeck" element={<AddDeck/>}/>
+            <Route path="/decks/:id" element={<Deck/>}/>
           </Routes>
         </div>
       </div>
