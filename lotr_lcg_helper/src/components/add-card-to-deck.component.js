@@ -11,6 +11,7 @@ export default class AddCardToDeck extends Component {
         this.retrieveCards = this.retrieveCards.bind(this);
         this.retrieveDecks = this.retrieveDecks.bind(this);
         this.saveBind = this.saveBind.bind(this);
+        this.newBind = this.newBind.bind(this);
 
         this.state = {
             card_id: "1",
