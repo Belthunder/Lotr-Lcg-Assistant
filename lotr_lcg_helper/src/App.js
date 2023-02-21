@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+//Card imports
 import AddCard from "./components/add-card.component";
 import Card from "./components/card.component";
 import CardsList from "./components/cards-list.component";
 
+//Deck imports
 import AddDeck from "./components/add-deck.component";
 import Deck from "./components/deck.component";
 import DecksList from "./components/decks-list.component";
+
+import AddCardToDeck from "./components/add-card-to-deck.component";
 
 class App extends Component {
   render() {
@@ -40,6 +43,11 @@ class App extends Component {
                 Add Deck
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/addCardToDeck"} className="nav-link">
+                Add Card to Deck
+              </Link>
+            </li>
           </div>
         </nav>
 
@@ -54,6 +62,8 @@ class App extends Component {
             <Route path="/decks" element={<DecksList/>}/>
             <Route path="/addDeck" element={<AddDeck/>}/>
             <Route path="/decks/:id" element={<Deck/>}/>
+
+            <Route path="/addCardToDeck" element={<AddCardToDeck/>}/>
           </Routes>
         </div>
       </div>
