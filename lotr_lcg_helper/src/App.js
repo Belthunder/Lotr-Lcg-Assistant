@@ -11,6 +11,7 @@ import CardsList from "./components/cards-list.component";
 import AddDeck from "./components/add-deck.component";
 import Deck from "./components/deck.component";
 import DecksList from "./components/decks-list.component";
+import DeckStats from "./components/deck-stats.component";
 
 import AddCardToDeck from "./components/add-card-to-deck.component";
 
@@ -62,6 +63,7 @@ class App extends Component {
             <Route path="/decks" element={<DecksList/>}/>
             <Route path="/addDeck" element={<AddDeck/>}/>
             <Route path="/decks/:id" element={<Deck/>}/>
+            <Route path="/decks/stats/:id" element={<DeckStats/>}/>
 
             <Route path="/addCardToDeck" element={<AddCardToDeck/>}/>
           </Routes>
