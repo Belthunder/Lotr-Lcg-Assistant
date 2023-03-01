@@ -167,10 +167,10 @@ export default class DecksList extends Component {
                                 </label>
                                 {currentDeck.cards.map((card, index) => (
                                     <li
-                                    className="list-group-item"
+                                    className="list-group-item-cards"
                                     key = {index}
                                     >
-                                        {card.card_name}
+                                        {card.cards_in_decks.card_number} {card.card_name}
                                     </li>
                                 )
                                 )}

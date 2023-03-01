@@ -1,11 +1,68 @@
 .App {
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .list {
+  background-color: #98bbad;
   text-align: left;
   max-width: 750px;
   margin: auto;
+  list-style-type: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.list-group-item{
+  border-style: solid;
+  border-radius: 12px;
+  border-color: goldenrod;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.list-group-item::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  display: inline-block;
+  height: 27px;
+  width: 23px;
+  background-size: contain;
+  background-image: url('./assets/images/oneRing.png');
+}
+
+.list-group-itemactive{
+  background-color: white;
+  border-style: solid;
+  border-radius: 12px;
+  border-color: rgb(97, 14, 14);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.list-group-itemactive::before {
+  content: "";
+  position:static;
+  top: 12px;
+  left: 5px;
+  display: inline-block;
+  height: 27px;
+  width: 23px;
+  background-size: contain;
+  background-image: url('./assets/images/oneRing.png');
+}
+
+.col-md-6{
+  border-style: solid;
+  border-radius: 12px;
+  border-color: black;
 }
 
 .submit-form {
