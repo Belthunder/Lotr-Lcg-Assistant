@@ -28,6 +28,10 @@ class DeckDataService {
     findByName(name) {
         return http.get(`/decks?name=${name}`);
     }
+
+    addCardToDeck(data) {
+        return http.post("/decks/add", data);
+    }
 }
 
 export default new DeckDataService();

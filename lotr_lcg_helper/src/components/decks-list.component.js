@@ -16,7 +16,7 @@ export default class DecksList extends Component {
             decks: [],
             currentDeck: null,
             currentIndex: -1,
-            searchName: ""
+            searchName: "",
         };
     }
 
@@ -55,7 +55,7 @@ export default class DecksList extends Component {
         this.setState({
             currentDeck: deck,
             currentIndex: index
-        });
+        }); 
     }
 
     removeAllDecks() {
@@ -84,7 +84,6 @@ export default class DecksList extends Component {
             console.log(err);
         });
     }
-
 
     render() {
         const { searchName, decks, currentDeck, currentIndex } = this.state;
@@ -117,7 +116,9 @@ export default class DecksList extends Component {
                         {decks && decks.map((deck, index) => (
                             <li
                                 className={"list-group-item" + (index === currentIndex ? "active" : "")}
-                                onClick={()=> this.setActiveDeck(deck, index)}
+                                onClick={()=> 
+                                    this.setActiveDeck(deck, index)
+                                }
                                 key={index}
                                 >
                                     {deck.deck_name}
@@ -160,6 +161,20 @@ export default class DecksList extends Component {
                                 </label>{" "}
                                 {currentDeck.deck_games_won}
                             </div>
+                            <div>
+                                <label>
+                                    <strong>Cards:</strong>
+                                </label>
+                                {currentDeck.cards.map((card, index) => (
+                                    <li
+                                    className="list-group-item"
+                                    key = {index}
+                                    >
+                                        {card.card_name}
+                                    </li>
+                                )
+                                )}
+                            </div>
 
                             <Link
                                 to={"/decks/" + currentDeck.id}
@@ -167,6 +182,10 @@ export default class DecksList extends Component {
                                 >
                                     Edit Deck
                             </Link>
+                            <Link
+                                to={"/decks/stats/" + currentDeck.id}
+                                className="badge badge-warning"
+                                >View Stats</Link>
                         </div>
                     ) : (
                         <div>
