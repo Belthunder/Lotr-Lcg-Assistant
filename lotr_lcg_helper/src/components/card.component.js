@@ -78,7 +78,7 @@ class Card extends Component {
     getCard(id) {
         CardDataService.get(id).then(response => {
             this.setState({
-                currentCard: response.data
+                currentCard: response.data[0]
             });
             console.log(response.data);
         }).catch(err => {
