@@ -67,6 +67,7 @@ export default class DecksList extends Component {
         }).catch(err => {
             console.log(err);
         });
+        this.refreshList();
     }
 
     searchName() {

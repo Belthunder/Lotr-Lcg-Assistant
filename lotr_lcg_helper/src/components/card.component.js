@@ -163,7 +163,7 @@ class Card extends Component {
 
                         <button
                             className="badge badge-danger mr-2"
-                            onClick={() => this.deleteCard}
+                            onClick={this.deleteCard}
                         >
                             Delete Card
                         </button>

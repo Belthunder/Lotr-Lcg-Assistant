@@ -26,7 +26,7 @@ class DeckDataService {
     }
 
     findByName(name) {
-        return http.get(`/decks?name=${name}`);
+        return http.get(`/decks?deck_name=${name}`);
     }
 
     addCardToDeck(data) {
