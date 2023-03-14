@@ -171,7 +171,9 @@ export default class DecksList extends Component {
                                     className="list-group-item-cards"
                                     key = {index}
                                     >
-                                        {card.cards_in_decks.card_number} {card.card_name}
+                                        {card.cards_in_decks.card_number} {card.card_name} {card.card_sphere}
+                                        <br/>
+                                        {card.card_text}
                                     </li>
                                 )
                                 )}
