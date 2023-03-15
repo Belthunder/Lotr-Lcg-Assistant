@@ -138,6 +138,7 @@ export default class DecksList extends Component {
                     {currentDeck ? (
                         <div>
                             <h4>Deck</h4>
+                            <div className="header-deckbox">
                             <div>
                                 <label>
                                     <strong>Name:</strong>
@@ -162,17 +163,18 @@ export default class DecksList extends Component {
                                 </label>{" "}
                                 {currentDeck.deck_games_won}
                             </div>
+                            </div>
                             <div>
-                                <label>
-                                    <strong>Cards:</strong>
+                                <label className="header-cards">
+                                    <h4>Cards</h4>
                                 </label>
                                 {currentDeck.cards.map((card, index) => (
                                     <li
                                     className="list-group-item-cards"
                                     key = {index}
                                     >
-                                        {card.cards_in_decks.card_number} {card.card_name} {card.card_sphere}
-                                        <br/>
+                                        <strong>{card.cards_in_decks.card_number}x</strong> <strong>{card.card_name}</strong> ({card.card_sphere})
+                                        <br />
                                         {card.card_text}
                                     </li>
                                 )

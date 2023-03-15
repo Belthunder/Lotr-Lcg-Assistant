@@ -126,7 +126,7 @@ export default class AddCardToDeck extends Component {
                         <label htmlFor="card_id">Card</label>
                         <select name = "card_id" id="card_id" onChange={this.onChangeCard}>
                             { cards && cards.map((card) => (
-                                <option key={card.id} value={card.id}>{card.card_name}</option>
+                                <option key={card.id} value={card.id}>{card.card_name} ({card.card_sphere})</option>
                             ))}
                         </select>
                     </div>

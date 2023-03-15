@@ -136,25 +136,25 @@ export default class CardsList extends Component {
                     {currentCard ? (
                         <div>
                             <h4>Card</h4>
-                            <div>
+                            <div className="cardListElement">
                                 <label>
                                     <strong>Name:</strong>
                                 </label>{" "}
                                 {currentCard.card_name}
                             </div>
-                            <div>
+                            <div className="cardListElement">
                                 <label>
                                     <strong>Sphere:</strong>
                                 </label>{" "}
                                 {currentCard.card_sphere}
                             </div>
-                            <div>
+                            <div className="cardListElement">
                                 <label>
                                     <strong>Type:</strong>
                                 </label>{" "}
                                 {currentCard.card_type}
                             </div>
-                            <div>
+                            <div className="cardListElement">
                                 <label>
                                     <strong>Text:</strong>
                                 </label>{" "}

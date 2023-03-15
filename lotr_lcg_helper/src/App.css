@@ -99,3 +99,26 @@ ul {
   border-color: goldenrod;
 }
 
+.cardListElement{
+  padding: 10px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: saddlebrown;
+  background-color: goldenrod;
+}
+
+.list-group-item-cards{
+  padding: 10px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: saddlebrown;
+  background-color: goldenrod;
+}
+
+.header-deckbox{
+  padding: 10px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: saddlebrown;
+  background-color: rgb(171, 209, 171);
+}
