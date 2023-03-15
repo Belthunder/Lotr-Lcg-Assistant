@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <nav className = "navbar navbar-expand navbar-dark bg-dark">
-          <a href="/cards" className="navbar-brand">
+          <a href="/decks" className="navbar-brand">
             Lotr LCG Assistant
           </a>
           <div className= "navbar-nav mr-auto">
