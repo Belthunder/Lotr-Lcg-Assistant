@@ -8,6 +8,7 @@ export default class AddCardToDeck extends Component {
 
         this.onChangeCard = this.onChangeCard.bind(this);
         this.onChangeDeck = this.onChangeDeck.bind(this);
+        this.onChangeCardNumber = this.onChangeCardNumber.bind(this);
         this.retrieveCards = this.retrieveCards.bind(this);
         this.retrieveDecks = this.retrieveDecks.bind(this);
         this.saveBind = this.saveBind.bind(this);
@@ -16,6 +17,7 @@ export default class AddCardToDeck extends Component {
         this.state = {
             card_id: "1",
             deck_id: "1",
+            card_number: 0,
 
             submitted: false
         };
@@ -60,16 +62,24 @@ export default class AddCardToDeck extends Component {
         });
     }
 
+    onChangeCardNumber(e) {
+        this.setState({
+            card_number: e.target.value
+        });
+    }
+
     saveBind() {
         var data = {
             card_id: this.state.card_id,
-            deck_id: this.state.deck_id
+            deck_id: this.state.deck_id,
+            card_number: this.state.card_number
         }
 
         DeckDataService.addCardToDeck(data).then(response => {
             this.setState({
                 card_id: response.data.card_id,
                 deck_id: response.data.deck_id,
+                card_number: response.data.card_number,
 
                 submitted: true
             });
@@ -83,6 +93,7 @@ export default class AddCardToDeck extends Component {
         this.setState({
             card_id: null,
             deck_id: null,
+            card_number: 0,
 
             submitted: false
         });
@@ -115,9 +126,21 @@ export default class AddCardToDeck extends Component {
                         <label htmlFor="card_id">Card</label>
                         <select name = "card_id" id="card_id" onChange={this.onChangeCard}>
                             { cards && cards.map((card) => (
-                                <option key={card.id} value={card.id}>{card.card_name}</option>
+                                <option key={card.id} value={card.id}>{card.card_name} ({card.card_sphere})</option>
                             ))}
                         </select>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="card_number">Number in Deck</label>
+                        <input
+                                type="number"
+                                className="form-control"
+                                id="card_number"
+                                required
+                                value={this.card_number}
+                                onChange={this.onChangeCardNumber}
+                                name="card_number"
+                            />
                     </div>
 
                     <button onClick={this.saveBind} className="btn btn-success">

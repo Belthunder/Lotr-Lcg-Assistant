@@ -78,7 +78,7 @@ class Deck extends Component {
     getDeck(id) {
        DeckDataService.get(id).then(response => {
         this.setState({
-            currentDeck: response.data
+            currentDeck: response.data[0]
         });
         console.log(response.data);
        }).catch(err => {

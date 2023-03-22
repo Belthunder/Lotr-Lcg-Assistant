@@ -67,6 +67,7 @@ export default class DecksList extends Component {
         }).catch(err => {
             console.log(err);
         });
+        this.refreshList();
     }
 
     searchName() {
@@ -137,6 +138,7 @@ export default class DecksList extends Component {
                     {currentDeck ? (
                         <div>
                             <h4>Deck</h4>
+                            <div className="header-deckbox">
                             <div>
                                 <label>
                                     <strong>Name:</strong>
@@ -161,16 +163,19 @@ export default class DecksList extends Component {
                                 </label>{" "}
                                 {currentDeck.deck_games_won}
                             </div>
+                            </div>
                             <div>
-                                <label>
-                                    <strong>Cards:</strong>
+                                <label className="header-cards">
+                                    <h4>Cards</h4>
                                 </label>
                                 {currentDeck.cards.map((card, index) => (
                                     <li
-                                    className="list-group-item"
+                                    className="list-group-item-cards"
                                     key = {index}
                                     >
-                                        {card.card_name}
+                                        <strong>{card.cards_in_decks.card_number}x</strong> <strong>{card.card_name}</strong> ({card.card_sphere})
+                                        <br />
+                                        {card.card_text}
                                     </li>
                                 )
                                 )}

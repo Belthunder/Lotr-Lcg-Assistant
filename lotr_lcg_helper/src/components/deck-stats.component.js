@@ -28,9 +28,8 @@ class DeckStats extends Component {
     getDeck(id) {
         DeckDataService.get(id).then(response => {
          this.setState({
-             currentDeck: response.data
+             currentDeck: response.data[0]
          });
-         console.log(response.data);
         }).catch(err => {
          console.log(err);
         }); 
@@ -39,7 +38,7 @@ class DeckStats extends Component {
     getDeckWinPercentage(currentDeck) {
         const games_won = currentDeck.deck_games_won;
         console.log(`games won: ${games_won}`);
-        const games_played = this.state.currentDeck.deck_games_played;
+        const games_played = currentDeck.deck_games_played;
         var win_percentage;
         if(games_played === 0) {
             win_percentage = 0;

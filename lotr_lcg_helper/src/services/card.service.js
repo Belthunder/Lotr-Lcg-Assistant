@@ -26,7 +26,7 @@ class CardDataService {
     }
 
     findByName(name) {
-        return http.get(`/cards?name=${name}`);
+        return http.get(`/cards?card_name=${name}`);
     }
 }
 

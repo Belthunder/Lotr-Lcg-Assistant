@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <nav className = "navbar navbar-expand navbar-dark bg-dark">
-          <a href="/cards" className="navbar-brand">
+          <a href="/decks" className="navbar-brand">
             Lotr LCG Assistant
           </a>
           <div className= "navbar-nav mr-auto">
@@ -55,7 +55,8 @@ class App extends Component {
         <div className="container mt-3">
           <Routes>
 
-            <Route path="/" element={<CardsList/>}/>
+            <Route path="/" element={<DecksList/>}/>
+
             <Route path="/cards" element={<CardsList/>}/>
             <Route path="/add" element={<AddCard/>}/>
             <Route path="/cards/:id" element={<Card/>}/>
