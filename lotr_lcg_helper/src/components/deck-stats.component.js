@@ -92,12 +92,6 @@ class DeckStats extends Component {
                                 </label>{" "}
                                 {currentDeck.deck_games_won}
                             </div>
-                            <div>
-                                <label>
-                                    <strong>Win Percentage:</strong>
-                                </label>{" "}
-                                {this.state.winPercentage}
-                            </div>
                             {getDeckWinPercentage}
                         <button
                             className="badge badge-danger mr-2"
