@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import DeckDataService from "../services/deck.service";
 import CardDataService from "../services/card.service";
 
+//
+
 export default class AddCardToDeck extends Component {
     constructor(props) {
         super(props)
@@ -28,6 +30,7 @@ export default class AddCardToDeck extends Component {
         this.retrieveDecks();
     }
 
+    //grabs all current cards from database, stores them in state.
     retrieveCards() {
         CardDataService.getAll().then(response => {
             this.setState({
@@ -39,6 +42,7 @@ export default class AddCardToDeck extends Component {
         });
     }
 
+    //grabs all current decks from database, stores them in state.
     retrieveDecks() {
         DeckDataService.getAll().then(response => {
             this.setState({
@@ -50,6 +54,7 @@ export default class AddCardToDeck extends Component {
         });
     }
 
+    //set the current card in the state to the target card.
     onChangeCard(e) {
         this.setState({
             card_id: e.target.value
@@ -68,6 +73,7 @@ export default class AddCardToDeck extends Component {
         });
     }
 
+    //inserts a new entry in the card-deck join table using the provided card and deck saved in the state object.
     saveBind() {
         var data = {
             card_id: this.state.card_id,
@@ -89,6 +95,7 @@ export default class AddCardToDeck extends Component {
         });
     }
 
+    //reset the state object information after a new card is added.
     newBind() {
         this.setState({
             card_id: null,
